@@ -1,0 +1,38 @@
+<h1>PIZZA TIME!</h1>
+
+<h2>Pizzas that have yet to be eaten!</h2>
+<ul>
+  {{#each pizzas}}
+    {{#unless eaten}}
+      {{> pizzas/pizza-block eaten=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Pizzas you've eaten! (good for you!)</h2>
+
+<ul>
+  {{#each pizzas}}
+    {{#if eaten}}
+      {{> pizzas/pizza-block eaten=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+
+<h2>Order a Pizza</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="za">Type of Pizza:</label>
+    <input type="text" id="za" name="flavor">
+  </div>
+
+  <div class="form-group">
+    <label for="eaten">Did you eat it?</label><br>
+    <input type="radio" name="Eaten" value="1" checked> Eaten!<br>
+    <input type="radio" name="Eaten" value="0"> uneaten
+  </div>
+
+  <button type="submit">Add to order</button>
+</form>
