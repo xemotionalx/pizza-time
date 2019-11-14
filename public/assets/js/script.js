@@ -25,7 +25,7 @@ $(function() {
 
         var newPizza = {
             flavor: $("#za").val().trim(),
-            eaten: $("[name=Eaten]:checked").val().trim()
+            eaten: 0
         };
 
         // Send the POST request.
